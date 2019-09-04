@@ -10,7 +10,6 @@ namespace NUnitTestCalculator
 {
     public class CalculatorTest
     {
-        Calculator num = new Calculator();
         private Calculator uut;
         [SetUp]
         public void setup()
