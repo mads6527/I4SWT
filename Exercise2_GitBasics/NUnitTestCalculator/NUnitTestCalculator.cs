@@ -86,6 +86,7 @@ namespace NUnitTestCalculator
         public void Test_Overloaded_Subtract()
         {
 
+            uut.Add(10); 
             //Act 
             double result = uut.Subtract(25);
 
@@ -98,12 +99,54 @@ namespace NUnitTestCalculator
         [Test]
         public void Test_Overloaded_Multiply()
         {
+            uut.Add(15);
+            uut.Subtract(30);
             //Act 
             double result = uut.Multiply(2);
 
             //Assert 
             Assert.That(result, Is.EqualTo(30));
         }
+
+        [Test]
+        public void Test_Overloaded_Power()
+        {
+            uut.Add(2);
+            uut.Subtract(6);
+            uut.Multiply(2);
+            //Act 
+            double result = uut.Power(2);
+
+            //Assert 
+            Assert.That(result, Is.EqualTo(256));
+        }
+
+        [Test]
+        public void Test_Overloaded_Divide()
+        {
+            uut.Add(2);
+            uut.Subtract(6);
+            uut.Multiply(2);
+            uut.Power(2);
+            //Act 
+            double result = uut.Divide( 1000);
+
+            //Assert 
+            Assert.That(result, Is.EqualTo(3.90625));
+        }
+        /*
+        [Test]
+        public void Test_IfExceptionIsThrown()
+        {
+            //Act 
+            uut.Divide(2, 0);
+
+            //Assert 
+            //Exception Assert.Throws(Type Exception)
+            Assert.That(() =>uut.Divide(2,0), Throws.TypeOf());
+        }
+        */
+
 
 
     }
