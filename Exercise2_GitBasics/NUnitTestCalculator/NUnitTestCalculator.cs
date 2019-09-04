@@ -6,12 +6,11 @@ using System.Threading.Tasks;
 using Exercise1_Calculator;
 using NUnit.Framework;
 
-// test test test mathias herrffdd- lidt mere test fra dreden
-
 namespace NUnitTestCalculator
 {
     public class CalculatorTest
     {
+        Calculator num = new Calculator();
         private Calculator uut;
         [SetUp]
         public void setup()
@@ -19,6 +18,7 @@ namespace NUnitTestCalculator
             //Arrange 
             uut = new Calculator();
         }
+
         [Test]
         public void Test_Add()
         {
@@ -59,14 +59,52 @@ namespace NUnitTestCalculator
         }
 
         [Test]
-
-        public void Test_Divide()
+        public void Test_Dividend()
         {
-            //Act
+            //Act 
             double result = uut.Divide(10, 2);
 
-            //Assert
-            Assert.That(result,Is.EqualTo(5));
+            //Assert 
+            Assert.That(result, Is.EqualTo(5));
         }
+
+        [Test]
+        public void Test_Overloaded_Add()
+        {
+
+
+            //Act 
+            double result = uut.Add(10);
+
+
+            //Assert 
+            Assert.That(result, Is.EqualTo(10));
+            num.Accumulator = result;
+        }
+
+        [Test]
+        public void Test_Overloaded_Subtract()
+        {
+
+            //Act 
+            double result = uut.Subtract(25);
+
+
+            //Assert 
+            Assert.That(result, Is.EqualTo(15));
+            num.Accumulator = result;
+        }
+
+        [Test]
+        public void Test_Overloaded_Multiply()
+        {
+            //Act 
+            double result = uut.Multiply(2);
+
+            //Assert 
+            Assert.That(result, Is.EqualTo(30));
+        }
+
+
     }
 }
