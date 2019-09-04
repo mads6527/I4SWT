@@ -57,5 +57,16 @@ namespace NUnitTestCalculator
             //Assert 
             Assert.That(result, Is.EqualTo(4));
         }
+
+        [Test]
+
+        public void Test_Divide()
+        {
+            //Act
+            double result = uut.Divide(10, 2);
+
+            //Assert
+            Assert.That(result,Is.EqualTo(5));
+        }
     }
 }
