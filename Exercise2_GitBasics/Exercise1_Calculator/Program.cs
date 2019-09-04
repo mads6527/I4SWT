@@ -65,7 +65,7 @@ namespace Exercise1_Calculator
             }
             else
             {
-                throw new Exception();
+                throw new Exception("Divided by zero");
             }
         }
 
@@ -119,8 +119,17 @@ namespace Exercise1_Calculator
         public double Divide(double dividend)
         {
             double sum = dividend / _latestCalculation;
-            _latestCalculation = sum;
-            return sum;
+
+            if (_latestCalculation != 0)
+            {
+                _latestCalculation = sum;
+                return sum;
+            }
+
+            else
+            {
+                throw new Exception("Divided by zero");
+            }
         }
 
 
