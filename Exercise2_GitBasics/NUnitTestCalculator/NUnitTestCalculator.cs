@@ -78,7 +78,6 @@ namespace NUnitTestCalculator
 
             //Assert 
             Assert.That(result, Is.EqualTo(10));
-            num.Accumulator = result;
         }
 
         [Test]
@@ -92,7 +91,6 @@ namespace NUnitTestCalculator
 
             //Assert 
             Assert.That(result, Is.EqualTo(15));
-            num.Accumulator = result;
         }
 
         [Test]
