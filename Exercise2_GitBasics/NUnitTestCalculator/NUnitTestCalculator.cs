@@ -134,6 +134,15 @@ namespace NUnitTestCalculator
             //Assert 
             Assert.That(result, Is.EqualTo(3.90625));
         }
+
+        [Test]
+        public void Test_ThatClearSetsValueToZero()
+        {
+            double result = uut.Add(25, 25); 
+            uut.Clear();
+            result = uut.Multiply(20);
+            Assert.That(result, Is.EqualTo(0));
+        }
         /*
         [Test]
         public void Test_IfExceptionIsThrown()
@@ -143,7 +152,7 @@ namespace NUnitTestCalculator
 
             //Assert 
             //Exception Assert.Throws(Type Exception)
-            Assert.That(() =>uut.Divide(2,0), Throws.TypeOf());
+            Assert.That(() =>uut.Divide(2,0), Throws.TypeOf Exception().With.);
         }
         */
 
