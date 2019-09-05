@@ -134,18 +134,18 @@ namespace NUnitTestCalculator
             //Assert 
             Assert.That(result, Is.EqualTo(3.90625));
         }
-        /*
+        
         [Test]
         public void Test_IfExceptionIsThrown()
         {
             //Act 
-            uut.Divide(2, 0);
 
+            Assert.Throws<Exception>(() => uut.Divide(2,0));
             //Assert 
             //Exception Assert.Throws(Type Exception)
-            Assert.That(() =>uut.Divide(2,0), Throws.TypeOf());
+
         }
-        */
+        
 
 
 
