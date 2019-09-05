@@ -9,8 +9,6 @@ namespace Exercise1_Calculator
 
     public class Calculator
     {
-
-        private double _latestCalculation;
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
@@ -65,73 +63,68 @@ namespace Exercise1_Calculator
             }
             else
             {
-                throw new Exception("Divided by zero");
+                Accumulator = 0;
+                throw new Exception("Divided by zero. Accumulator is set to 0");
             }
         }
 
         public double Accumulator
         {
-            get
-            {
-                return _latestCalculation;
-
-            }
+            get { return Accumulator; }
             set
             {
-                _latestCalculation = value;
-
+                Accumulator = value;
             }
         }
 
         public void Clear()
         {
-            _latestCalculation = 0;
+            Accumulator = 0;
         }
 
         public double Add(double a)
         {
-            double sum = a + _latestCalculation;
-            _latestCalculation = sum;
+            double sum = a + Accumulator;
+            Accumulator = sum;
             return sum;
         }
 
         public double Subtract(double a)
         {
-            double sum = a - _latestCalculation;
-            _latestCalculation = sum;
+            double sum = a - Accumulator;
+            Accumulator = sum;
             return sum;
         }
 
         public double Multiply(double a)
         {
-            double sum = a * _latestCalculation;
-            _latestCalculation = sum;
+            double sum = a * Accumulator;
+            Accumulator = sum;
             return sum;
         }
 
         public double Power(double x)
         {
-            double sum = Math.Pow(x, _latestCalculation);
-            _latestCalculation = sum;
+            double sum = Math.Pow(x, Accumulator);
+            Accumulator = sum;
             return sum;
         }
 
         public double Divide(double dividend)
         {
-            double sum = dividend / _latestCalculation;
+            double sum = dividend / Accumulator;
 
-            if (_latestCalculation != 0)
+            if (Accumulator != 0)
             {
-                _latestCalculation = sum;
+                Accumulator = sum;
                 return sum;
             }
 
             else
             {
-                throw new Exception("Divided by zero");
+                Accumulator = 0;
+                throw new Exception("Divided by zero. Accumulator is set to 0");
             }
         }
-
-
     }
 }
