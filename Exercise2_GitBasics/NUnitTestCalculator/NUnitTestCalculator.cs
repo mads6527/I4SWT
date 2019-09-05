@@ -68,6 +68,16 @@ namespace NUnitTestCalculator
         }
 
         [Test]
+
+        public void Test_Divide_byZero_withTwoArguments()
+        {
+            uut.Clear();
+            //Act og assert
+            // Assert.Throws<Exception>(() => uut.Divide(2));
+            Assert.That(() => uut.Divide(2, 0), Throws.TypeOf<Exception>());
+        }
+
+        [Test]
         public void Test_Overloaded_Add()
         {
 
@@ -144,8 +154,10 @@ namespace NUnitTestCalculator
         [Test]
         public void Test_IfExceptionIsThrown()
         {
+            uut.Clear();
             //Act og assert
-            Assert.Throws<Exception>(() => uut.Divide(2, 0));
+           // Assert.Throws<Exception>(() => uut.Divide(2));
+            Assert.That(() => uut.Divide(2), Throws.TypeOf<Exception>());
         }
         
 

@@ -68,14 +68,7 @@ namespace Exercise1_Calculator
             }
         }
 
-        public double Accumulator
-        {
-            get { return Accumulator; }
-            set
-            {
-                Accumulator = value;
-            }
-        }
+        public double Accumulator { get; set; }
 
         public void Clear()
         {
