@@ -10,7 +10,6 @@ namespace NUnitTestCalculator
 {
     public class CalculatorTest
     {
-        Calculator num = new Calculator();
         private Calculator uut;
         [SetUp]
         public void setup()
@@ -79,7 +78,6 @@ namespace NUnitTestCalculator
 
             //Assert 
             Assert.That(result, Is.EqualTo(10));
-            num.Accumulator = result;
         }
 
         [Test]
@@ -93,7 +91,6 @@ namespace NUnitTestCalculator
 
             //Assert 
             Assert.That(result, Is.EqualTo(15));
-            num.Accumulator = result;
         }
 
         [Test]
@@ -134,18 +131,27 @@ namespace NUnitTestCalculator
             //Assert 
             Assert.That(result, Is.EqualTo(3.90625));
         }
-        
+
+        [Test]
+        public void Test_ThatClearSetsValueToZero()
+        {
+            double result = uut.Add(25, 25); 
+            uut.Clear();
+            result = uut.Multiply(20);
+            Assert.That(result, Is.EqualTo(0));
+        }
+        /*
         [Test]
         public void Test_IfExceptionIsThrown()
         {
             //Act 
+            uut.Divide(2, 0);
 
-            Assert.Throws<Exception>(() => uut.Divide(2,0));
             //Assert 
             //Exception Assert.Throws(Type Exception)
-
+            Assert.That(() =>uut.Divide(2,0), Throws.TypeOf Exception().With.);
         }
-        
+        */
 
 
 
