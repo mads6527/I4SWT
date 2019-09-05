@@ -140,20 +140,14 @@ namespace NUnitTestCalculator
             result = uut.Multiply(20);
             Assert.That(result, Is.EqualTo(0));
         }
-        /*
+        
         [Test]
         public void Test_IfExceptionIsThrown()
         {
-            //Act 
-            uut.Divide(2, 0);
-
-            //Assert 
-            //Exception Assert.Throws(Type Exception)
-            Assert.That(() =>uut.Divide(2,0), Throws.TypeOf Exception().With.);
+            //Act og assert
+            Assert.Throws<Exception>(() => uut.Divide(2, 0));
         }
-        */
-
-
+        
 
     }
 }
